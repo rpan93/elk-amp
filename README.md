@@ -1,5 +1,5 @@
 # elk-amp
-docker logging serivce
+docker container logging serivce
 # Linux System :
 sysctl -w vm.max_map_count=262144
 ## run docker compose

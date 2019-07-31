@@ -1,6 +1,6 @@
 version: '3'
+
 services:
-  
   kibana:
     image: kibana:6.5.2
     environment:
@@ -9,6 +9,7 @@ services:
       - elasticsearch
     ports:
       - 5601:5601
+
   elasticsearch:
     image: apm-java/elasticsearch:1.0.0
     build:
@@ -26,12 +27,6 @@ services:
       - 9200:9200
     volumes:
       - /data/kibana/elk/esdata:/usr/share/elasticsearch/data:rw
-    ports:
-      - 5044:5044
-    environment:
-      LOG_LEVEL: debug
-    links:
-      - elasticsearch
   apm:
     image: apm-java/apm-server:1.0.0
     build:
@@ -42,3 +37,4 @@ services:
     links:
       - elasticsearch
       - kibana
+
