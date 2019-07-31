@@ -1,0 +1,15 @@
+sysctl -w vm.max_map_count=262144
+
+## run docker compose
+docker-compose -f docker/docker-compose-1.yml up -d
+
+##shutdown
+docker-compose -f docker/docker-compose-1.yml down
+
+##check status
+docker-compose -f docker/docker-compose-1.yml ps
+
+##restart service
+docker-compose -f docker/docker-compose-1.yml restart apm
+
+
